@@ -11,20 +11,43 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f1f5f9; /* Tailwind slate-100 */
+            background: linear-gradient(135deg, #fce7f3, #e0f2fe); /* Vibrant background gradient */
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        .profile-card {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .profile-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .skill-card, .project-card {
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .skill-card:hover, .project-card:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
-<body class="flex items-center justify-center min-h-screen p-6">
+<body>
 
     <!-- Profile Card Container -->
-    <div class="bg-white p-8 rounded-2xl shadow-2xl max-w-2xl w-full space-y-8">
+    <div class="profile-card bg-white p-8 rounded-2xl shadow-2xl max-w-2xl w-full space-y-8">
         
         <!-- Header Section -->
         <div class="flex flex-col items-center text-center">
             <!-- Profile Picture Placeholder -->
-            <div class="w-32 h-32 bg-indigo-100 rounded-full flex items-center justify-center mb-4 border-4 border-indigo-300">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-16 h-16 text-indigo-500" viewBox="0 0 16 16">
+            <div class="w-32 h-32 bg-teal-100 rounded-full flex items-center justify-center mb-4 border-4 border-teal-300">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-16 h-16 text-teal-500" viewBox="0 0 16 16">
                     <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                     <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
                 </svg>
@@ -53,28 +76,28 @@
             <h2 class="text-2xl font-bold text-slate-800">Skills</h2>
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 text-center">
                 <!-- Skill Card 1 -->
-                <div class="p-4 bg-indigo-50 rounded-lg shadow-sm">
-                    <p class="font-semibold text-indigo-700">Python</p>
+                <div class="skill-card p-4 bg-teal-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-teal-700">Python</p>
                 </div>
                 <!-- Skill Card 2 -->
-                <div class="p-4 bg-indigo-50 rounded-lg shadow-sm">
-                    <p class="font-semibold text-indigo-700">C++</p>
+                <div class="skill-card p-4 bg-teal-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-teal-700">C++</p>
                 </div>
                 <!-- Skill Card 3 -->
-                <div class="p-4 bg-indigo-50 rounded-lg shadow-sm">
-                    <p class="font-semibold text-indigo-700">JavaScript</p>
+                <div class="skill-card p-4 bg-teal-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-teal-700">JavaScript</p>
                 </div>
                 <!-- Skill Card 4 -->
-                <div class="p-4 bg-indigo-50 rounded-lg shadow-sm">
-                    <p class="font-semibold text-indigo-700">HTML & CSS</p>
+                <div class="skill-card p-4 bg-teal-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-teal-700">HTML & CSS</p>
                 </div>
                 <!-- Skill Card 5 -->
-                <div class="p-4 bg-indigo-50 rounded-lg shadow-sm">
-                    <p class="font-semibold text-indigo-700">Data Structures</p>
+                <div class="skill-card p-4 bg-teal-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-teal-700">Data Structures</p>
                 </div>
                 <!-- Skill Card 6 -->
-                <div class="p-4 bg-indigo-50 rounded-lg shadow-sm">
-                    <p class="font-semibold text-indigo-700">SQL</p>
+                <div class="skill-card p-4 bg-teal-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-teal-700">SQL</p>
                 </div>
             </div>
         </div>
@@ -86,20 +109,20 @@
             <h2 class="text-2xl font-bold text-slate-800">Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Project Card 1 -->
-                <div class="bg-gray-50 p-6 rounded-xl shadow-md space-y-2">
+                <div class="project-card bg-gray-50 p-6 rounded-xl shadow-md space-y-2">
                     <h3 class="text-xl font-semibold text-gray-800">Project Title 1</h3>
                     <p class="text-gray-600 text-sm">
                         A brief description of the first project. Mention the technologies used and the main goal of the project.
                     </p>
-                    <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium transition-colors duration-200">Learn More &rarr;</a>
+                    <a href="#" class="text-teal-600 hover:text-teal-800 font-medium transition-colors duration-200">Learn More &rarr;</a>
                 </div>
                 <!-- Project Card 2 -->
-                <div class="bg-gray-50 p-6 rounded-xl shadow-md space-y-2">
+                <div class="project-card bg-gray-50 p-6 rounded-xl shadow-md space-y-2">
                     <h3 class="text-xl font-semibold text-gray-800">Project Title 2</h3>
                     <p class="text-gray-600 text-sm">
                         A brief description of the second project. Highlight the key features and your contribution.
                     </p>
-                    <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium transition-colors duration-200">Learn More &rarr;</a>
+                    <a href="#" class="text-teal-600 hover:text-teal-800 font-medium transition-colors duration-200">Learn More &rarr;</a>
                 </div>
             </div>
         </div>
